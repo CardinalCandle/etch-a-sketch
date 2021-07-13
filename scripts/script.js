@@ -32,4 +32,20 @@ function resetBoard(){
     for (i = 0; i < childs.length; i++) {
       childs[i].style.backgroundColor = "";
      }
+     resetGrid()
+}
+function resetGrid() {
+    numo = prompt("Please insert the size of your desired grid: (Number between 1-100)");
+    document.getElementById("container").style.gridTemplateRows = ""
+    document.getElementById("container").style.gridTemplateColumns = ""
+    num = parseInt(numo) + 1
+    for(y=1; y < num; y++) {
+        document.getElementById("container").style.gridTemplateRows += `${Math.floor(100/num)}%`
+        console.log('loop row number '+y)
+    }
+    numsq = numo*numo ; numsq += 1;
+    for(i=1; i<numsq; i++) {
+        addElement(i)
+    }
+
 }
